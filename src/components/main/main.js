@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import Form from "./Form";
 
 class Main extends Component {
     render() {
-        return <p>Hello from main</p>;
+        return(
+        <>
+            <Form />
+        </>
+        );
     };
 };
 
