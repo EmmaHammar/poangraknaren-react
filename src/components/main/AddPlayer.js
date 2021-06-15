@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class AddPlayer extends Component {
 
     state = {
-        pName:this.props.inputPlayer,
-        score:this.props.inputScore,
+        pName: "",
+        score: "",
     }
 
     onChange = (evt) => {        
@@ -17,19 +17,16 @@ class AddPlayer extends Component {
         evt.preventDefault();
 
         //skicka tillbaka nya statet till App.js:
-        this.props.getNewPlayer(this.state.inputPlayer, this.state.inputScore)
-        
-
-        // this.props.getNewPlayer(this.state.inputPlayer)
-        // this.props.getNewScore(this.state.inputScore)
-
+        this.props.getNewPlayer(this.state.pName, this.state.score)
     }
 
     render() {
         return(
             <form onSubmit={this.onSubmit}>
-                <input type="text" id="inputPlayer" name="inputPlayer" placeholder="Player" value={this.state.inputPlayer} onChange={this.onChange} />
-                <input type="number" id="inputScore" name="inputScore" placeholder="Score" value={this.state.inputScore} onChange={this.onChange}/>
+                <input type="text" id="pName" name="pName" placeholder="Add player name" value={this.state.pName} onChange={this.onChange} />
+                
+                <input type="number" id="score" name="score" placeholder="Add score" value={this.state.score} onChange={this.onChange} />
+
                 <button id="addPlayerBtn" className="btn">Add Player</button>
             </form>
         );

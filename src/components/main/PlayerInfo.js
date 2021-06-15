@@ -15,8 +15,15 @@ class PlayerInfo extends Component {
    
     //sparar nya statet med ny spelare i PlayerInfo-state
     saveNewPlayer = (myName, myScore) => {
+
+        //TESTA:
+        //push till players
+        //setState nya arrayen
+
         this.setState ({
-            4: {pName: myName, score: myScore}
+            newPlayer: {
+                4: {pName: myName, score: myScore}
+            }
         })
     }
     updateScore = (newScore, id) => {
@@ -34,20 +41,12 @@ class PlayerInfo extends Component {
     render() {
         return(
             <>
-                <AddPlayer 
-                        // inputPlayer={this.state.inputPlayer}
-                        
-                        // inputScore={this.state.inputScore}
-
-                        getNewPlayer={this.saveNewPlayer}
-                />
+                <AddPlayer getNewPlayer={this.saveNewPlayer} />
 
                 <ul className="playerList">
                     {Object.keys(this.state.players).map( (item, i) => 
                         <PrintPlayer 
                             key={i} id={item} pName={this.state.players[item].pName} score={this.state.players[item].score} updateScore={this.updateScore}
-                            // showPlayer={this.state.inputPlayer}
-                            // showScore={this.state.inputScore} 
                         />
                     )}
                 </ul>
