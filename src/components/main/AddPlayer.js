@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class AddPlayer extends Component {
 
     state = {
-        inputPlayer:this.props.inputPlayer,
-        inputScore:this.props.inputScore,
+        pName:this.props.inputPlayer,
+        score:this.props.inputScore,
     }
 
     onChange = (evt) => {        
@@ -32,4 +32,4 @@ class Form extends Component {
     };
 };
 
-export default Form;
+export default AddPlayer;

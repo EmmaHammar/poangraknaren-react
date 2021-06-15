@@ -1,14 +1,14 @@
 import { logDOM } from "@testing-library/dom";
 import React from "react";
 
-class Print extends React.Component {
+class PrintPlayer extends React.Component {
 
     render() {
         return (
             <div className="playerInfoDiv">
 
-                <h2>{this.props.showPlayer}</h2>
-                <h3>{this.props.showScore}</h3>
+                <h2>{this.props.pName}</h2>
+                <h3>{this.props.score} poäng</h3>
                 <button id="minus-btn" className="btn">-</button>
                 <button id="plus-btn" className="btn">+</button>
 
@@ -18,4 +18,4 @@ class Print extends React.Component {
 }
 
 
-export default Print;
+export default PrintPlayer;
