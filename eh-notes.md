@@ -17,10 +17,13 @@ Kan du skapa ett formulär via vilket du kan lägga till nya spelare.
 
 ## 
 fånga klick + och - -> ändra score
-svar: onClick i print.js 
+svar: onClick + addScore() removeScore()
 
 inte skriva över ny användare
 svar: multidimensionell array
+
+lägga till nya spelare
+
 
 https://github.com/loveefraimsson/poangraknare
 
