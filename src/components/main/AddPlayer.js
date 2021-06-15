@@ -16,6 +16,10 @@ class AddPlayer extends Component {
     onSubmit = (evt) => {
         evt.preventDefault();
 
+        //skicka tillbaka nya statet till App.js:
+        this.props.getNewPlayer(this.state.inputPlayer, this.state.inputScore)
+        
+
         // this.props.getNewPlayer(this.state.inputPlayer)
         // this.props.getNewScore(this.state.inputScore)
 

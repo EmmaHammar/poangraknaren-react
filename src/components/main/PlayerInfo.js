@@ -12,15 +12,13 @@ class PlayerInfo extends Component {
             3: {pName: "Annika", score: 8},
         }
     }
-  
-    // saveNewPlayer = (getPlayer) => {
-    //     this.setState( {inputPlayer: getPlayer} )
-    // }
-
-    // saveNewScore = (getScore) => {
-    //     this.setState( {inputScore: getScore} )
-    // }
    
+    //sparar nya statet med ny spelare i PlayerInfo-state
+    saveNewPlayer = (myName, myScore) => {
+        this.setState ({
+            4: {pName: myName, score: myScore}
+        })
+    }
     updateScore = (newScore, id) => {
         // console.log("Update score", newScore, "id", id);
         const newState = {...this.state.players} 
@@ -37,11 +35,11 @@ class PlayerInfo extends Component {
         return(
             <>
                 <AddPlayer 
-                        inputPlayer={this.state.inputPlayer}
-                        getNewPlayer={this.saveNewPlayer}
+                        // inputPlayer={this.state.inputPlayer}
                         
-                        inputScore={this.state.inputScore}
-                        getNewScore={this.saveNewScore}
+                        // inputScore={this.state.inputScore}
+
+                        getNewPlayer={this.saveNewPlayer}
                 />
 
                 <ul className="playerList">
