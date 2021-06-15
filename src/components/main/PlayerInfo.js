@@ -15,12 +15,25 @@ class PlayerInfo extends Component {
    
     //sparar nya statet med ny spelare i PlayerInfo-state
     saveNewPlayer = (myName, myScore) => {
+        
+        //initial players:
+        // const playersArray = this.state.players;
+        console.log("playersArray:", this.state.players);
 
-        //TESTA:
-        //push till players
-        //setState nya arrayen
+        //skapa ny spelare:
+        // let newPlayer = {4: {pName: myName, score: myScore} };
+        let newPlayer = {pName: myName, score: myScore};
+        console.log("newPlayer:", newPlayer);
 
+        //lägga till nya spelaren till players-arrayen: - HUR?
+        [this.state.players].push(newPlayer);
+        // [this.state.players].concat(newPlayer);
+        console.log("updaterad players:", this.state.players);
+
+
+        //sätta uppdaterade arrayen players istället??
         this.setState ({
+            
             newPlayer: {
                 4: {pName: myName, score: myScore}
             }

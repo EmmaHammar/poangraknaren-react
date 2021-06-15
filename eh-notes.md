@@ -16,8 +16,8 @@ Kan du skapa ett formulär via vilket du kan lägga till nya spelare.
 
 
 ## saker att hantera:
-- felmeddelande: A component is changing an uncontrolled input to be controlled...
-- lägga till nya spelare, ex vad skriva i <AddPlayer />?
+- lägga till nya spelare
+(har fångat inputfältet i statet för PlayerInfo -> newPlayer. Ex push/concat newPlayer med players -> setState för uppdaterade players - hur göra? )
 
 
 
@@ -30,3 +30,6 @@ svar: onClick + addScore() removeScore()
 
 inte skriva över ny användare
 svar: multidimensionell array
+
+- felmeddelande: A component is changing an uncontrolled input to be controlled...
+svar: fylla i null till state = { }
