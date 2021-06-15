@@ -15,15 +15,18 @@ Kan du rendera om ordningen på spelare när någon spelare får mer poäng än 
 Kan du skapa ett formulär via vilket du kan lägga till nya spelare.
 
 
-## 
+## saker att hantera:
+- felmeddelande: A component is changing an uncontrolled input to be controlled...
+- lägga till nya spelare, ex vad skriva i <AddPlayer />?
+
+
+
+===
+Slask: 
+https://github.com/loveefraimsson/poangraknare
+
 fånga klick + och - -> ändra score
 svar: onClick + addScore() removeScore()
 
 inte skriva över ny användare
 svar: multidimensionell array
-
-lägga till nya spelare, ex vad skriva i <AddPlayer />?
-
-
-https://github.com/loveefraimsson/poangraknare
-
