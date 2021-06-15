@@ -4,13 +4,14 @@ import React from "react";
 class PrintPlayer extends React.Component {
 
     addScore = (evt) => {
-        console.log("add score");
-        console.log("evt.target.id:", evt.target.id);
+        // console.log("add score");
+        // console.log("evt.target.id:", evt.target.id);
         this.props.updateScore(this.props.score + 1, evt.target.id)
     }
 
     removeScore = (evt) => {
         console.log("remove score");
+        this.props.updateScore(this.props.score - 1, evt.target.id)
     }
 
     render() {
