@@ -28,7 +28,7 @@ class Form extends Component {
             <form onSubmit={this.onSubmit}>
                 <input type="text" id="inputPlayer" name="inputPlayer" placeholder="Player" value={this.state.inputPlayer} onChange={this.onChange} />
                 <input type="number" id="inputScore" name="inputScore" placeholder="Score" value={this.state.inputScore} onChange={this.onChange}/>
-                <button id="addPlayerBtn">Add Player</button>
+                <button id="addPlayerBtn" className="btn">Add Player</button>
             </form>
         );
     };

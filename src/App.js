@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./components/header/header";
 import Form from "./components/main/Form";
+import Print from "./components/main/Print";
+
 // import Main from "./components/main/main";
 
 class App extends React.Component {
@@ -30,6 +32,10 @@ class App extends React.Component {
                     inputScore={this.state.inputScore}
                     getNewScore={this.saveNewScore}
 
+                />
+                <Print 
+                    showPlayer={this.state.inputPlayer}
+                    showScore={this.state.inputScore} 
                 />
                 {/* <Main /> */}
             </>

@@ -13,3 +13,9 @@ Bonus:
 Kan du rendera om ordningen på spelare när någon spelare får mer poäng än någon annan. Så att alltid den spelare med mest poäng hamnar överst.
 
 Kan du skapa ett formulär via vilket du kan lägga till nya spelare.
+
+
+## 
+fånga klick + och - -> ändra score
+
+inte skriva över ny användare
