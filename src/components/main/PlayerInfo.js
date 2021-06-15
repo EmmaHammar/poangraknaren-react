@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import AddPlayer from "./AddPlayer";
 import PrintPlayer from "./PrintPlayer";
 
-
-
 class PlayerInfo extends Component {
 
     state = {
@@ -15,7 +13,6 @@ class PlayerInfo extends Component {
         }
     }
   
-
     // saveNewPlayer = (getPlayer) => {
     //     this.setState( {inputPlayer: getPlayer} )
     // }
@@ -23,13 +20,11 @@ class PlayerInfo extends Component {
     // saveNewScore = (getScore) => {
     //     this.setState( {inputScore: getScore} )
     // }
-
    
     updateScore = (newScore, id) => {
-        console.log("Update score", newScore, "id", id);
-
+        // console.log("Update score", newScore, "id", id);
         const newState = {...this.state.players} 
-        console.log("newState", newState);
+        // console.log("newState", newState);
         newState[id].score = newScore;
         // console.log("newState[id]", newState[id]);
 
@@ -49,7 +44,7 @@ class PlayerInfo extends Component {
                         getNewScore={this.saveNewScore}
                 />
 
-                <ul className="playersList">
+                <ul className="playerList">
                     {Object.keys(this.state.players).map( (item, i) => 
                         <PrintPlayer 
                             key={i} id={item} pName={this.state.players[item].pName} score={this.state.players[item].score} updateScore={this.updateScore}
@@ -58,14 +53,10 @@ class PlayerInfo extends Component {
                         />
                     )}
                 </ul>
-
-                
             </>
             
         )
     }
-    
-
 }
 
 export default PlayerInfo;

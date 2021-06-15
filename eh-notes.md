@@ -22,7 +22,7 @@ svar: onClick + addScore() removeScore()
 inte skriva över ny användare
 svar: multidimensionell array
 
-lägga till nya spelare
+lägga till nya spelare, ex vad skriva i <AddPlayer />?
 
 
 https://github.com/loveefraimsson/poangraknare
