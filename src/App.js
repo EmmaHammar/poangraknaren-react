@@ -10,6 +10,12 @@ class App extends React.Component {
     state = {
         inputPlayer: "",
         inputScore: "",
+       // 1)multidimensionell array
+    //    players: {
+    //         1: {pName: "Kalle", score: 0},
+    //         2: {pName: "Anna", score: 5},
+    //         3: {pName: "Johan", score: 8},
+    //     }
         // inputScore: "skriv score", //varför syns inte detta medan om jag skriver inputPlayer: "skriv player", syns det?
     }
 
@@ -33,11 +39,15 @@ class App extends React.Component {
                     getNewScore={this.saveNewScore}
 
                 />
+
                 <Print 
                     showPlayer={this.state.inputPlayer}
                     showScore={this.state.inputScore} 
                 />
-                {/* <Main /> */}
+
+                
+                <Player showPlayers={this.state.players}/> 
+                
             </>
         );
     };
