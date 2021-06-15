@@ -14,28 +14,29 @@ class PlayerInfo extends Component {
             3: {pName: "Annika", score: 8},
         }
     }
-    // state = {
-    //     inputPlayer: "",
-    //     inputScore: "",
+  
+
+    // saveNewPlayer = (getPlayer) => {
+    //     this.setState( {inputPlayer: getPlayer} )
     // }
 
+    // saveNewScore = (getScore) => {
+    //     this.setState( {inputScore: getScore} )
+    // }
 
-    saveNewPlayer = (getPlayer) => {
-        this.setState( {inputPlayer: getPlayer} )
-    }
+   
+    updateScore = (newScore, id) => {
+        console.log("Update score", newScore, "id", id);
 
-    saveNewScore = (getScore) => {
-        this.setState( {inputScore: getScore} )
-    }
-
-    printAllPlayers = () => {
-        const newState = {...this.state.players}
+        const newState = {...this.state.players} 
         console.log("newState", newState);
+        newState[id].score = newScore;
+        // console.log("newState[id]", newState[id]);
+
         this.setState(
             {players: newState}
         )
     }
-    
 
     render() {
         return(
@@ -51,7 +52,7 @@ class PlayerInfo extends Component {
                 <ul className="playersList">
                     {Object.keys(this.state.players).map( (item, i) => 
                         <PrintPlayer 
-                            pName={this.state.players[item].pName} score={this.state.players[item].score}
+                            key={i} id={item} pName={this.state.players[item].pName} score={this.state.players[item].score} updateScore={this.updateScore}
                             // showPlayer={this.state.inputPlayer}
                             // showScore={this.state.inputScore} 
                         />
