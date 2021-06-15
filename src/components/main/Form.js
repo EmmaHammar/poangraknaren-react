@@ -7,9 +7,7 @@ class Form extends Component {
         inputScore:this.props.inputScore,
     }
 
-    onChange = (evt) => {
-        // console.log("upptäckte en ändring");
-        
+    onChange = (evt) => {        
         this.setState( {
             [evt.target.name]: evt.target.value
         })
