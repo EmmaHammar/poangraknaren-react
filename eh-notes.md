@@ -14,22 +14,30 @@ Kan du rendera om ordningen på spelare när någon spelare får mer poäng än 
 
 Kan du skapa ett formulär via vilket du kan lägga till nya spelare.
 
-
-## saker att hantera:
-- lägga till nya spelare
-(har fångat inputfältet i statet för PlayerInfo -> newPlayer. Ex push/concat newPlayer med players -> setState för uppdaterade players - hur göra? )
-
-
-
 ===
-Slask: 
-https://github.com/loveefraimsson/poangraknare
 
-fånga klick + och - -> ändra score
+# Kom ihåg
+
+- lägga till nya spelare (har fångat inputfältet i statet för PlayerInfo -> newPlayer. Vill att newPlayer ska hamna inne i players-arrayen)
+1) Sätter nytt state: 
+        const newState = {...this.state.players}
+2) Dynamiskt skapa löpnummer från siffran 4 och uppåt:
+    let pKey = Object.keys(this.state.players).length+1
+3) Lägga till ny spelare med dynamiskt löpnummer till players-arrayen:
+    newState[pKey] = {pName: myName, score: parseInt(myScore)} 
+
+4) Sätta nytt state för players (så att varje ny spelare printas ut, och inte skriver över varandra):
+    this.setState ({
+                players: newState
+            })
+
+- fånga klick + och - -> ändra score
 svar: onClick + addScore() removeScore()
 
-inte skriva över ny användare
+- inte skriva över ny användare
 svar: multidimensionell array
 
 - felmeddelande: A component is changing an uncontrolled input to be controlled...
-svar: fylla i null till state = { }
+svar: fylla i "" till state = { }
+
+- https://github.com/loveefraimsson/poangraknare

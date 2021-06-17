@@ -17,40 +17,23 @@ class PlayerInfo extends Component {
     saveNewPlayer = (myName, myScore) => {
         
         //initial players:
-        // const playersArray = this.state.players;
-        console.log("playersArray:", this.state.players);
+        // console.log("playersArray:", this.state.players);
 
-        //skapa ny spelare:
-        // let newPlayer = {4: {pName: myName, score: myScore} };
-        // let newPlayer = {pName: myName, score: myScore};
-        
-        // let newPlayer = { 
-        //     pKey: {pName: myName, score: myScore} 
-        // };
-        // console.log("newPlayer:", newPlayer);
-
-        //lägga till nya spelaren till players-arrayen: - HUR?
-        // [this.state.players].push(newPlayer);
-        // [this.state.players].concat(newPlayer);
-        // console.log("updaterad players:", this.state.players);
-
-
-        //sätta uppdaterade arrayen players istället?? newState blir uppdaterade players 
+        //sätta ett nytt state som initialt är players-arrayen (senare kommer newState vara players-arrayen + nya spelare)
         const newState = {...this.state.players}
-        console.log("newState:", newState);
+        // console.log("newState:", newState);
 
+        //dynamiskt skapa löpnummer:
         let pKey = Object.keys(this.state.players).length+1
-        console.log("pKey", pKey);
+        // console.log("pKey", pKey);
+
+        //lägga till ny spelare till players-arrayen som då skriver över/uppdaterar newState:
+        //parseInt för att siffran ska bli en number och inte string
         newState[pKey] = {pName: myName, score: parseInt(myScore)} 
        
+        //sätter players-arrayen som newState:
         this.setState ({
             players: newState
-            
-            // newState = ([...this.state.players, newPlayer])
-            // this.props.saveNewPlayer([...this.props.players, newPlayer]);
-            // newPlayer: {
-            //     4: {pName: myName, score: myScore}
-            // }
         })
     }
     updateScore = (newScore, id) => {
@@ -78,7 +61,6 @@ class PlayerInfo extends Component {
                     )}
                 </ul>
             </>
-            
         )
     }
 }
