@@ -7,7 +7,7 @@ class PlayerInfo extends Component {
     state = {
         //gör en multidimensionell array:
         players: {
-            1: {pName: "Pippi", score: 0},
+            1: {pName: "Pippi", score: 11},
             2: {pName: "Tommy", score: 5},
             3: {pName: "Annika", score: 8},
         }
@@ -49,16 +49,47 @@ class PlayerInfo extends Component {
     }
 
     render() {
+        //Janne skrev: 
+        // const playerList = this.state.players;
+        // playerList.sort((a, b) => b.score - a.score);
+
+        //hämta players state:
+        const getPlayers = {...this.state.players}
+
+        // convert players (object) to an array:
+        const playersArray = Object.keys(getPlayers).map((key) => getPlayers[key]);
+        // console.log("convertPlayersToArray:", playersArray);
+
+        //sort:
+        playersArray.sort( (a, b) => b.score - a.score );
+    
         return(
             <>
                 <AddPlayer getNewPlayer={this.saveNewPlayer} />
 
                 <ul className="playerList">
-                    {Object.keys(this.state.players).map( (item, i) => 
+
+                    {/* printar osorterad players: */}
+                    {/* {Object.keys(this.state.players).map( (item, i) => 
                         <PrintPlayer 
                             key={i} id={item} pName={this.state.players[item].pName} score={this.state.players[item].score} updateScore={this.updateScore}
                         />
+                    )} */}
+
+
+                    {Object.keys(this.state.players).map( (item, i) => 
+                        <PrintPlayer 
+                            key={i} id={item} pName={playersArray[i].pName} score={playersArray[i].score} updateScore={this.updateScore}
+                        />
                     )}
+
+                    {/* den sorterar men buggit samt får error: Warning: Each child in a list should have a unique "key" prop. */}
+                    {/* {Object.keys(this.state.players).map( (item, i) => 
+                        <PrintPlayer 
+                            key={playersArray[i].id} id={i} pName={playersArray[i].pName} score={playersArray[i].score} updateScore={this.updateScore}
+                        />
+                    )} */}
+
                 </ul>
             </>
         )
