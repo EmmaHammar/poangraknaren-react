@@ -22,21 +22,35 @@ class PlayerInfo extends Component {
 
         //skapa ny spelare:
         // let newPlayer = {4: {pName: myName, score: myScore} };
-        let newPlayer = {pName: myName, score: myScore};
-        console.log("newPlayer:", newPlayer);
+        // let newPlayer = {pName: myName, score: myScore};
+        
+        // let newPlayer = { 
+        //     pKey: {pName: myName, score: myScore} 
+        // };
+        // console.log("newPlayer:", newPlayer);
 
         //lägga till nya spelaren till players-arrayen: - HUR?
-        [this.state.players].push(newPlayer);
+        // [this.state.players].push(newPlayer);
         // [this.state.players].concat(newPlayer);
-        console.log("updaterad players:", this.state.players);
+        // console.log("updaterad players:", this.state.players);
 
 
-        //sätta uppdaterade arrayen players istället??
+        //sätta uppdaterade arrayen players istället?? newState blir uppdaterade players 
+        const newState = {...this.state.players}
+        console.log("newState:", newState);
+
+        let pKey = Object.keys(this.state.players).length+1
+        console.log("pKey", pKey);
+        newState[pKey] = {pName: myName, score: parseInt(myScore)} 
+       
         this.setState ({
+            players: newState
             
-            newPlayer: {
-                4: {pName: myName, score: myScore}
-            }
+            // newState = ([...this.state.players, newPlayer])
+            // this.props.saveNewPlayer([...this.props.players, newPlayer]);
+            // newPlayer: {
+            //     4: {pName: myName, score: myScore}
+            // }
         })
     }
     updateScore = (newScore, id) => {
